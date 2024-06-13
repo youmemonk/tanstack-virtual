@@ -1,9 +1,11 @@
-import MockTable from "./Table";
+import { Flex } from "antd";
+import Link from "next/link";
 
-export default function Home() {
+export default function App() {
 	return (
-		<>
-			<MockTable />
-		</>
+		<Flex vertical gap="large" align="middle" justify="center">
+			<Link href="/tanstack">Tanstack Virtual Table</Link>
+			<Link href="/antd">ANTD Table</Link>
+		</Flex>
 	);
 }

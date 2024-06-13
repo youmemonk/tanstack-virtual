@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import ReactDOM from "react-dom/client";
 import {
 	ColumnDef,
 	flexRender,
@@ -15,18 +14,15 @@ import {
 import { keepPreviousData, QueryClient, QueryClientProvider, useInfiniteQuery } from "@tanstack/react-query";
 import { useVirtualizer } from "@tanstack/react-virtual";
 
-import { fetchData, Report, ReportAPIResponse } from "./mockData";
+import { fetchData, Report, ReportAPIResponse } from "../mockData";
 
 const fetchSize = 50;
-
 const queryClient = new QueryClient();
 
 function MockTable() {
 	//we need a reference to the scrolling element for logic down below
 	const tableContainerRef = React.useRef<HTMLDivElement>(null);
-
 	const [sorting, setSorting] = React.useState<SortingState>([]);
-
 	const columns = React.useMemo<ColumnDef<Report>[]>(
 		() => [
 			{
